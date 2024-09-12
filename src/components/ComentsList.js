@@ -13,17 +13,19 @@ function CommentsList({ title }) {
     };
 
     return (
-        <ul>
-            {title}
-            {comments.map((elem) => (
-                <>
-                    <li key={elem.id}>{elem.text}</li>
-                    <button onClick={() => removeComments(elem.id)}>
-                        Удалить
-                    </button>
-                </>
-            ))}
-        </ul>
+        <>
+            <h2>{title}</h2>
+            <ul>
+                {comments.map((elem) => (
+                    <li key={elem.id}>
+                        {elem.text}
+                        <button onClick={() => removeComments(elem.id)}>
+                            Удалить
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </>
     );
 }
 
